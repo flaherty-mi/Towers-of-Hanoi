@@ -7,7 +7,7 @@ package HanoiTowers.src;
 
 public class hanoiMain {
     
-    // method instructing how to solve the puzzle
+    // method instructing how to solve
     public static void hanoi (int i, char towerA, char towerC, char towerB) {
         
         // one disk 
@@ -16,14 +16,15 @@ public class hanoiMain {
             return;
         } // end if
         
-        // storing on tower B in order to move disk 4 -> tower C
+        
+        // starting recursion by calling method
         hanoi(i - 1, towerA, towerB, towerC);
         System.out.println("move disk " + i + " from tower " + towerA + " to tower " + towerC);
-        // move disks from tower B -> tower C
+        // move disks tower B -> tower C
         hanoi(i - 1, towerB, towerC, towerA);
     }
     // main method
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         char towerA = 'A';
         char towerB = 'B';
         char towerC = 'C';
