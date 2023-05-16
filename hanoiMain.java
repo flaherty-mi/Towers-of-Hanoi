@@ -7,30 +7,30 @@ package HanoiTowers.src;
 
 public class hanoiMain {
     
-    // method instructing how to solve
-    public static void hanoi (int i, char towerA, char towerC, char towerB) {
-        
-        // one disk 
-        if (i == 1) {
-            System.out.println("move disk 1 from tower " + towerA + " to tower " + towerC);
-            return;
-        } // end if
-        
-        
-        // starting recursion by calling method
-        hanoi(i - 1, towerA, towerB, towerC);
-        System.out.println("move disk " + i + " from tower " + towerA + " to tower " + towerC);
-        // move disks tower B -> tower C
-        hanoi(i - 1, towerB, towerC, towerA);
-    }
-    // main method
+    // main method 
     public static void main(String[] args) {
+        // initializing values for towers + disks
         char towerA = 'A';
         char towerB = 'B';
         char towerC = 'C';
         int i = 4;
         // calling hanoi method
         hanoi(i, towerA, towerC, towerB);
-    }
+    } // end main method
 
-}
+    // method instructing how to solve disk -> B
+    public static void hanoi (int i, char towerA, char towerC, char towerB) {
+        
+        // one disk 
+        if (i == 1) {
+            System.out.println("disk 1 moves from tower " + towerA + " to tower " + towerC);
+            return;
+        } // end if
+        
+        // recursion by calling method disk A -> C
+        hanoi(i - 1, towerA, towerB, towerC);
+        System.out.println("disk " + i + " moves from tower " + towerA + " to tower " + towerC);
+        // move disk tower B -> tower C
+        hanoi(i - 1, towerB, towerC, towerA);
+    } // end hanoi method
+} // end class
